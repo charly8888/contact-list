@@ -5,18 +5,7 @@ import Contacto from './Contacto'
 import { collection, getDocs, doc, onSnapshot, query, limit } from 'firebase/firestore'
 
 const ListaContactos = () => {
-  const [contactos, setContactos] = useState([
-    {
-      id: 1,
-      nombre: 'Carksi',
-      correo: 'Fasd',
-    },
-    {
-      id: 2,
-      nombre: 'Ger',
-      correo: 'Correo2',
-    },
-  ])
+  const [contactos, setContactos] = useState([])
 
   useEffect(() => {
     const q = query(collection(db, 'usuarios'), limit(3))
